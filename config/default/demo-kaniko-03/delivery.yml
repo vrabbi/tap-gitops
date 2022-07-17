@@ -1,0 +1,32 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: demo-kaniko-03
+  labels:
+    app.kubernetes.io/part-of: demo-kaniko-03
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/component: run
+    carto.run/workload-name: demo-kaniko-03
+    demo-label: asd
+spec:
+  template:
+    metadata:
+      annotations:
+        conventions.apps.tanzu.vmware.com/applied-conventions: appliveview-sample/app-live-view-appflavour-check
+        developer.conventions/target-containers: workload
+      labels:
+        app.kubernetes.io/component: run
+        app.kubernetes.io/part-of: demo-kaniko-03
+        apps.tanzu.vmware.com/has-tests: "true"
+        apps.tanzu.vmware.com/workload-type: web
+        carto.run/workload-name: demo-kaniko-03
+    spec:
+      containers:
+      - image: harbor.vrabbi.cloud/tap/demo-kaniko-03-default@sha256:b901d9a9c6bc3c19cd649aac2fe191c88037ef0d94c76eeb6e27e875a0fcc166
+        name: workload
+        resources: {}
+        securityContext:
+          runAsUser: 1000
+      serviceAccountName: default
+
