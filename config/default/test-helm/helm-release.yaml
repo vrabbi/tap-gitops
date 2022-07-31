@@ -13,7 +13,7 @@ spec:
   chart:
     spec:
       chart: java-web-app
-      version: 0.1.0
+      version: 0.1.1
       sourceRef:
         kind: HelmRepository
         name: demo
@@ -28,6 +28,6 @@ spec:
       minReplicas: 3
     image:
       pullPolicy: IfNotPresent
-      repository: harbor.vrabbi.cloud/tap/test-helm-default@sha256:a96ae5e7fc37f6b75c496ecdd75b9e9f63310371b0c248e8fccb408cdcfa8890
+      repository: harbor.vrabbi.cloud/tap/test-helm-default@sha256:f871658fa683e1faf9a84095ae492dc3483bfe577a61e8400d1801f6a77454b4
     replicaCount: 5
 
