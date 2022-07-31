@@ -35,5 +35,5 @@ spec:
           pathType: ImplementationSpecific
     replicaCount: 5
     service:
-      type: clusterIP
+      type: ClusterIP
 
