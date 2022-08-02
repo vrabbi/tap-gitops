@@ -4,9 +4,8 @@ metadata:
   name: test-iterate
   labels:
     app.kubernetes.io/part-of: test-iterate
-    apps.tanzu.vmware.com/has-tests: "true"
     apps.tanzu.vmware.com/workload-type: web
-    vrabbi: test
+    custom-image: "true"
     app.kubernetes.io/component: deliverable
     app.tanzu.vmware.com/deliverable-type: web
 spec:
