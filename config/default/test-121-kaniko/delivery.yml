@@ -1,0 +1,35 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: test-121-kaniko
+  labels:
+    app: yelb-appserver
+    app.kubernetes.io/part-of: test-121-kaniko
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: web
+    tier: middletier
+    app.kubernetes.io/component: run
+    carto.run/workload-name: test-121-kaniko
+spec:
+  template:
+    metadata:
+      annotations:
+        conventions.apps.tanzu.vmware.com/applied-conventions: appliveview-sample/app-live-view-appflavour-check
+        developer.conventions/target-containers: workload
+      labels:
+        app: yelb-appserver
+        app.kubernetes.io/component: run
+        app.kubernetes.io/part-of: test-121-kaniko
+        apps.tanzu.vmware.com/has-tests: "true"
+        apps.tanzu.vmware.com/workload-type: web
+        carto.run/workload-name: test-121-kaniko
+        tier: middletier
+    spec:
+      containers:
+      - image: harbor.vrabbi.cloud/tap/test-121-kaniko-default@sha256:9947752d7121e60bf7f4f87f09caf14afec850e0e07124d09a99ed349e9cfa1f
+        name: workload
+        resources: {}
+        securityContext:
+          runAsUser: 1000
+      serviceAccountName: default
+
