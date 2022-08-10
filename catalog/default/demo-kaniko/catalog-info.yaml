@@ -10,7 +10,7 @@ metadata:
     - web
     - tanzu
   annotations:
-    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=demo-kaniko'
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=test-121-kaniko'
 spec:
   type: service
   lifecycle: experimental
