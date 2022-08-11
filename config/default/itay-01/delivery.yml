@@ -1,0 +1,35 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: itay-01
+  labels:
+    app: yelb-appserver
+    app.kubernetes.io/part-of: itay-01
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: web
+    tier: middletier
+    app.kubernetes.io/component: run
+    carto.run/workload-name: itay-01
+spec:
+  template:
+    metadata:
+      annotations:
+        conventions.apps.tanzu.vmware.com/applied-conventions: appliveview-sample/app-live-view-appflavour-check
+        developer.conventions/target-containers: workload
+      labels:
+        app: yelb-appserver
+        app.kubernetes.io/component: run
+        app.kubernetes.io/part-of: itay-01
+        apps.tanzu.vmware.com/has-tests: "true"
+        apps.tanzu.vmware.com/workload-type: web
+        carto.run/workload-name: itay-01
+        tier: middletier
+    spec:
+      containers:
+      - image: harbor.vrabbi.cloud/tap/itay-01-default@sha256:42e5d2d5cb5bb215b096a539db5b53d93428299b23c7ceebcb8bd2404d0d421a
+        name: workload
+        resources: {}
+        securityContext:
+          runAsUser: 1000
+      serviceAccountName: default
+
