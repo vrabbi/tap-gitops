@@ -1,0 +1,22 @@
+apiVersion: carto.run/v1alpha1
+kind: Deliverable
+metadata:
+  name: test-image-repo
+  labels:
+    app.kubernetes.io/part-of: test-iterate
+    apps.tanzu.vmware.com/workload-type: web
+    custom-image: "true"
+    app.kubernetes.io/component: deliverable
+    app.tanzu.vmware.com/deliverable-type: web
+spec:
+  params:
+  - name: gitops_ssh_secret
+    value: git-auth
+  - name: gitops_sub_path
+    value: config/default/test-image-repo
+  source:
+    git:
+      url: https://github.com/vrabbi/tap-gitops.git
+      ref:
+        branch: dev
+
