@@ -1,0 +1,30 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: helm-demo-app
+  namespace: default
+  labels:
+    app.kubernetes.io/part-of: helm-demo-app
+    app.kubernetes.io/component: helm-release
+    app.tanzu.vmware.com/release-type: helm
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: java-web-app
+      sourceRef:
+        kind: HelmRepository
+        name: demo-repo
+      interval: 1m
+  upgrade:
+    remediation:
+      remediateLastFailure: true
+  values:
+    autoscaling:
+      enabled: true
+      minReplicas: 3
+    service:
+      type: LoadBalancer
+    image:
+      repository: harbor.vrabbi.cloud/tap/helm-demo-app-default@sha256:59efd75c55d9b4aa8f3f8b3f244d529ea2f791aade3a5341f815421b22c6389a
+
