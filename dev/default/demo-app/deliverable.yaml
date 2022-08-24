@@ -1,0 +1,22 @@
+apiVersion: carto.run/v1alpha1
+kind: Deliverable
+metadata:
+  name: demo-app
+  labels:
+    app.kubernetes.io/part-of: demo-app
+    apps.tanzu.vmware.com/full-gitops: "true"
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/component: deliverable
+    app.tanzu.vmware.com/deliverable-type: web
+spec:
+  params:
+  - name: gitops_ssh_secret
+    value: git-auth
+  - name: gitops_sub_path
+    value: config/default/demo-app
+  source:
+    git:
+      url: https://github.com/vrabbi/tap-gitops.git
+      ref:
+        branch: main
+
