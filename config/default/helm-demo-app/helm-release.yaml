@@ -26,5 +26,5 @@ spec:
     service:
       type: LoadBalancer
     image:
-      repository: harbor.vrabbi.cloud/tap/helm-demo-app-default@sha256:59efd75c55d9b4aa8f3f8b3f244d529ea2f791aade3a5341f815421b22c6389a
+      repository: harbor.vrabbi.cloud/tap/helm-demo-app-default@sha256:43a8492c4eb426c1b57b2595511a9543a89abc7cf704c0099fa5ddfc23f722ef
 
