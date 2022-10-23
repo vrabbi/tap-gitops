@@ -23,7 +23,7 @@ spec:
         carto.run/workload-name: py-demo-02
     spec:
       containers:
-      - image: harbor.vrabbi.cloud/workloads/py-demo-02-test@sha256:2cdf10c48cbd3e50f835a640596da27716533d6ff3a4ec476da158cec60339da
+      - image: harbor.vrabbi.cloud/workloads/py-demo-02-test@sha256:37d127b82cf005375b3de3d8d3c49b48bb52bfd906a491443b60914464188bfa
         name: workload
         resources: {}
         securityContext:
