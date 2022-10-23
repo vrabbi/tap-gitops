@@ -23,7 +23,7 @@ spec:
         carto.run/workload-name: calc-demo
     spec:
       containers:
-      - image: harbor.vrabbi.cloud/workloads/calc-demo-test@sha256:d24acd0fb90d8e6097db07c8852ab1fd69c03f9da5ee94aa9839b1a1077c1e52
+      - image: harbor.vrabbi.cloud/workloads/calc-demo-test@sha256:9f0602580193d177cc6b00af456cfc8bd8f988095b6c10b1ac04b3806125a2e6
         name: workload
         resources: {}
         securityContext:
