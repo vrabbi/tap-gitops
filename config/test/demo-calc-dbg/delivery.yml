@@ -1,0 +1,32 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: demo-calc-dbg
+  annotations:
+    ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
+    ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
+  labels:
+    app.kubernetes.io/part-of: demo-calc-dbg
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/component: run
+    carto.run/workload-name: demo-calc-dbg
+spec:
+  template:
+    metadata:
+      annotations:
+        conventions.carto.run/applied-conventions: appliveview-sample/app-live-view-appflavour-check
+        developer.conventions/target-containers: workload
+      labels:
+        app.kubernetes.io/component: run
+        app.kubernetes.io/part-of: demo-calc-dbg
+        apps.tanzu.vmware.com/workload-type: web
+        carto.run/workload-name: demo-calc-dbg
+    spec:
+      containers:
+      - image: harbor.vrabbi.cloud/workloads/demo-calc-dbg-test@sha256:bab3e0e0116add8f12ec17e59073bf36f386af3b1e537fdb903d95423359d245
+        name: workload
+        resources: {}
+        securityContext:
+          runAsUser: 1000
+      serviceAccountName: default
+
