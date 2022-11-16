@@ -16,14 +16,12 @@ spec:
     metadata:
       annotations:
         apps.tanzu.vmware.com/debug: "true"
-        apps.tanzu.vmware.com/live-update: "true"
         autoscaling.knative.dev/maxScale: "1"
         autoscaling.knative.dev/minScale: "1"
         boot.spring.io/actuator: http://:8081/actuator
         boot.spring.io/version: 2.7.4
         conventions.carto.run/applied-conventions: |-
           developer-conventions/debug-convention
-          developer-conventions/live-update-convention
           developer-conventions/add-source-image-label
           spring-boot-convention/spring-boot
           spring-boot-convention/spring-boot-graceful-shutdown
