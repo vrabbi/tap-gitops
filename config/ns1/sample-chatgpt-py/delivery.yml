@@ -22,7 +22,7 @@ spec:
           spring-boot-convention/auto-configure-actuators-check
           spring-boot-convention/app-live-view-appflavour-check
           appliveview-sample/app-live-view-appflavour-check
-        developer.apps.tanzu.vmware.com/image-source-digest: harbor.vrabbi.cloud/library/my-code/sample-chatgpt-py-source:latest@sha256:6d8cfd0fa78a7006c0b5e5993ae5731cc8490d4f5cd95d561280c2f9b5e73aeb
+        developer.apps.tanzu.vmware.com/image-source-digest: harbor.vrabbi.cloud/library/my-code/sample-chatgpt-py-source:latest@sha256:49881bbaa240d6d74a92e15302c485996becd2748bb502763e8527d72efb39f2
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -32,7 +32,7 @@ spec:
         carto.run/workload-name: sample-chatgpt-py
     spec:
       containers:
-      - image: harbor.vrabbi.cloud/tap/workloads/sample-chatgpt-py-ns1@sha256:a4d019844b795ebbe7f1e5dd994f47e253ad11d9003ae8d2a25598be05ae0ef6
+      - image: harbor.vrabbi.cloud/tap/workloads/sample-chatgpt-py-ns1@sha256:e077b8447dd935c77f5c0b75cf7a9fd166f0e4aea2112c8dfdaee9c9b1350321
         name: workload
         resources: {}
         securityContext:
