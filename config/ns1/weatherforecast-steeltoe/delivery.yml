@@ -28,7 +28,7 @@ spec:
           appliveview-sample/app-live-view-appflavour-check
           appliveview-sample/app-live-view-connector-steeltoe
           appliveview-sample/app-live-view-appflavours-steeltoe
-        developer.apps.tanzu.vmware.com/image-source-digest: harbor.vrabbi.cloud/library/my-code/sample-chatgpt-py-source:latest@sha256:cc00ec7d84750fa7ea28c0fef5a2ae8c507644147e704ec4c2ade5f46d8108e9
+        developer.apps.tanzu.vmware.com/image-source-digest: harbor.vrabbi.cloud/library/my-code/sample-chatgpt-py-source:latest@sha256:dca80a02cf04f8341d075393fb701006c742a764d0dc8496b5fa05fdf8c9333e
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -41,7 +41,7 @@ spec:
         tanzu.app.live.view.application.name: weatherforecast-steeltoe
     spec:
       containers:
-      - image: harbor.vrabbi.cloud/tap/workloads/weatherforecast-steeltoe-ns1@sha256:cb88183e3577eea6103df7e5c100cfccabf5d25846c9aa7aa622d9a617874706
+      - image: harbor.vrabbi.cloud/tap/workloads/weatherforecast-steeltoe-ns1@sha256:406dce13bb4232015dce8249833b6842ef727cbfcde11fc828014900a24f7ee8
         name: workload
         resources: {}
         securityContext:
