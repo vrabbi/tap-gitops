@@ -1,0 +1,50 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: weatherforecast-steeltoe
+  annotations:
+    ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
+    ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
+  labels:
+    app.kubernetes.io/part-of: weatherforecast-steeltoe
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: web
+    tanzu.app.live.view: "true"
+    tanzu.app.live.view.application.flavours: steeltoe
+    tanzu.app.live.view.application.name: weatherforecast-steeltoe
+    app.kubernetes.io/component: run
+    carto.run/workload-name: weatherforecast-steeltoe
+spec:
+  template:
+    metadata:
+      annotations:
+        apps.tanzu.vmware.com/debug: "true"
+        apps.tanzu.vmware.com/live-update: "true"
+        autoscaling.knative.dev/minScale: "1"
+        conventions.carto.run/applied-conventions: |-
+          developer-conventions/add-source-image-label
+          spring-boot-convention/auto-configure-actuators-check
+          spring-boot-convention/app-live-view-appflavour-check
+          appliveview-sample/app-live-view-appflavour-check
+          appliveview-sample/app-live-view-connector-steeltoe
+          appliveview-sample/app-live-view-appflavours-steeltoe
+        developer.apps.tanzu.vmware.com/image-source-digest: harbor.vrabbi.cloud/library/my-code/sample-chatgpt-py-source:latest@sha256:3545d9c57306d32061dcf881c72471399462a4b1271df8f020f32dd91a4bfb44
+        developer.conventions/target-containers: workload
+      labels:
+        app.kubernetes.io/component: run
+        app.kubernetes.io/part-of: weatherforecast-steeltoe
+        apps.tanzu.vmware.com/has-tests: "true"
+        apps.tanzu.vmware.com/workload-type: web
+        carto.run/workload-name: weatherforecast-steeltoe
+        tanzu.app.live.view: "true"
+        tanzu.app.live.view.application.flavours: steeltoe
+        tanzu.app.live.view.application.name: weatherforecast-steeltoe
+    spec:
+      containers:
+      - image: harbor.vrabbi.cloud/tap/workloads/weatherforecast-steeltoe-ns1@sha256:74a8aa91d164e5981a7322ae3de8e2b573b74bd37209a49afda4a48c7ce6822d
+        name: workload
+        resources: {}
+        securityContext:
+          runAsUser: 1000
+      serviceAccountName: default
+
