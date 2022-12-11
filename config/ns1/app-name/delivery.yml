@@ -31,7 +31,7 @@ spec:
           spring-boot-convention/spring-boot-web
           spring-boot-convention/app-live-view-appflavour-check
           appliveview-sample/app-live-view-appflavour-check
-        developer.apps.tanzu.vmware.com/image-source-digest: harbor.vrabbi.cloud/library/my-code/sample-chatgpt-spring:latest@sha256:71fad39d79fb836ae34ef25183f0443f325f9d850e1d8bb7c020d015db9ef2dc
+        developer.apps.tanzu.vmware.com/image-source-digest: harbor.vrabbi.cloud/library/my-code/sample-chatgpt-spring:latest@sha256:d5d2bf6553ff00dd794e5f268b12a3211f5b757675529d34c2504fa3b3cf1ba5
         developer.conventions/target-containers: workload
       labels:
         apis.apps.tanzu.vmware.com/register-api: "true"
@@ -51,7 +51,7 @@ spec:
           value: "9005"
         - name: JAVA_TOOL_OPTIONS
           value: -Dserver.port="8080"
-        image: harbor.vrabbi.cloud/tap/workloads/app-name-ns1@sha256:1c909057ed80feab5ffbb0437f42ee82aba20350e8d1645c5aad4fa1ddedfd7e
+        image: harbor.vrabbi.cloud/tap/workloads/app-name-ns1@sha256:d1544429d975d1b7a86ab5fe71020bb0c78c990b74e65f24264ebf723c970211
         name: workload
         ports:
         - containerPort: 8080
