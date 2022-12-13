@@ -28,7 +28,7 @@ spec:
           appliveview-sample/app-live-view-appflavour-check
           appliveview-sample/app-live-view-connector-steeltoe
           appliveview-sample/app-live-view-appflavours-steeltoe
-        developer.apps.tanzu.vmware.com/image-source-digest: harbor.vrabbi.cloud/library/demo-vs-01:latest@sha256:6aa9fcb238dd6052fb000beee80af2d4833d237cb6f720d47050b03123004629
+        developer.apps.tanzu.vmware.com/image-source-digest: harbor.vrabbi.cloud/library/demo-vs-01:latest@sha256:6eeaa87cef8f09ef79196469796273c0821b28724ad09aeafc020a3b5e52dfc9
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -41,7 +41,7 @@ spec:
         tanzu.app.live.view.application.name: weatherforecast-steeltoe
     spec:
       containers:
-      - image: harbor.vrabbi.cloud/tap/workloads/weatherforecast-steeltoe-ns1@sha256:755231f1763ff893ae3af4628496e61df1d8175c7f19a5a948369934a27f0894
+      - image: harbor.vrabbi.cloud/tap/workloads/weatherforecast-steeltoe-ns1@sha256:a6369834cb91c9c37c90d4a8bb8ea1fd88589949cf2083099c361ea75f85edfa
         name: workload
         resources: {}
         securityContext:
