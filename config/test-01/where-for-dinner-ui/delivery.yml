@@ -1,0 +1,52 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: where-for-dinner-ui
+  annotations:
+    ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
+    ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
+    kapp.k14s.io/change-rule: upsert after upserting servicebinding.io/ServiceBindings
+  labels:
+    app.kubernetes.io/part-of: where-for-dinner-ui
+    apps.tanzu.vmware.com/workload-type: web
+    networking.knative.dev/visibility: cluster-local
+    app.kubernetes.io/component: run
+    carto.run/workload-name: where-for-dinner-ui
+spec:
+  template:
+    metadata:
+      annotations:
+        apps.tanzu.vmware.com/debug: "true"
+        apps.tanzu.vmware.com/live-update: "true"
+        autoscaling.knative.dev/minScale: "1"
+        conventions.carto.run/applied-conventions: |-
+          appliveview-sample/app-live-view-appflavour-check
+          developer-conventions/add-source-image-label
+          spring-boot-convention/auto-configure-actuators-check
+          spring-boot-convention/app-live-view-appflavour-check
+        developer.apps.tanzu.vmware.com/image-source-digest: harbor.vrabbi.cloud/library/sample-app:latest@sha256:e50be8934a2ce3f6276afe83a054f290c84b63e669c78e1d9f30e323b0afcf2b
+        developer.conventions/target-containers: workload
+      labels:
+        app.kubernetes.io/component: run
+        app.kubernetes.io/part-of: where-for-dinner-ui
+        apps.tanzu.vmware.com/workload-type: web
+        carto.run/workload-name: where-for-dinner-ui
+        networking.knative.dev/visibility: cluster-local
+    spec:
+      containers:
+      - env:
+        - name: REACT_APP_PROFILE
+          value: secure
+        image: harbor.vrabbi.cloud/tap/workloads/where-for-dinner-ui-test-01@sha256:239483d4dfa25d75adf5288965c28c22ff82aa2216e3fcba04f74fa65e63b434
+        name: workload
+        resources:
+          limits:
+            cpu: 1500m
+            memory: 750M
+          requests:
+            cpu: 100m
+            memory: 500M
+        securityContext:
+          runAsUser: 1000
+      serviceAccountName: default
+
