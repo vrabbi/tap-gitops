@@ -37,7 +37,7 @@ spec:
           spring-boot-convention/app-live-view-appflavour-check
           spring-boot-convention/app-live-view-connector-boot
           spring-boot-convention/app-live-view-appflavours-boot
-        developer.apps.tanzu.vmware.com/image-source-digest: harbor.vrabbi.cloud/library/sample-app:latest@sha256:7fba448dc13896ba4f4591aea2ea7d1dd640c213101d085bc0fc4f55c29b39ae
+        developer.apps.tanzu.vmware.com/image-source-digest: harbor.vrabbi.cloud/library/sample-app:latest@sha256:93203e87835fb510b3c5c38210e82e6bc7bd1ac4e79cb57456a6cc945b1fa5ea
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -61,7 +61,7 @@ spec:
           value: "9005"
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: harbor.vrabbi.cloud/tap/workloads/tanzu-java-web-app-test-01@sha256:14c760a6315d5bd6ba81fcfb019939a33fcc6e493fadbf3db432eda613571022
+        image: harbor.vrabbi.cloud/tap/workloads/tanzu-java-web-app-test-01@sha256:5f3052554254b40dbef6c6e060ca7989535ad25cae03fc5d9be784d252af95e4
         livenessProbe:
           httpGet:
             path: /livez
