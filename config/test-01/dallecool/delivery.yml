@@ -16,6 +16,7 @@ spec:
   template:
     metadata:
       annotations:
+        apps.tanzu.vmware.com/auto-configure-actuators: "true"
         autoscaling.knative.dev/minScale: "1"
         boot.spring.io/version: 3.0.5
         conventions.carto.run/applied-conventions: |-
