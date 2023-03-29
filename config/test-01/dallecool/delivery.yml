@@ -48,7 +48,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.health.probes.enabled="true" -Dserver.port="8080"
-        image: harbor.vrabbi.cloud/tap/workloads/dallecool-test-01@sha256:273e4163afe9f737267837f3f93d58a10e786882784f04a0830e5a50646de2b2
+        image: harbor.vrabbi.cloud/tap/workloads/dallecool-test-01@sha256:c3657f16ae8690b6cf45e02946a72b0c0098ec16ea556348c5fced4e28c50f68
         livenessProbe:
           httpGet:
             path: /livez
