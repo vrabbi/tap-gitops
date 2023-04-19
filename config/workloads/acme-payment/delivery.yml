@@ -65,7 +65,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080"
-        image: harbor.vrabbi.cloud/tap/workloads/acme-payment-workloads@sha256:8660a926275b423ef82209d65e9deb48df1d9e8ee825789c93faf6a46af21c1c
+        image: harbor.vrabbi.cloud/tap/workloads/acme-payment-workloads@sha256:9db06cb0248e22161e35c4a60de9358710cd3a1a8ee387f752abe3783af5efad
         livenessProbe:
           httpGet:
             path: /livez
