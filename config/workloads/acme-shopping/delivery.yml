@@ -42,7 +42,7 @@ spec:
       - env:
         - name: PORT
           value: "8080"
-        image: harbor.vrabbi.cloud/tap/workloads/acme-shopping-workloads@sha256:f81727a75d499c799990ad96058dd85e4c3c60b733081bb078ecc8472f35925b
+        image: harbor.vrabbi.cloud/tap/workloads/acme-shopping-workloads@sha256:3619528abbe29cc02ffddb3317c9db72c65207b929542f89b15e599512a603e9
         name: workload
         resources: {}
         securityContext:
