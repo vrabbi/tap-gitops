@@ -55,7 +55,7 @@ spec:
             secretKeyRef:
               key: password
               name: cart-redis-pass
-        image: harbor.vrabbi.cloud/tap/workloads/acme-cart-workloads@sha256:eea095b2a78ad2b1d4ef18cb9e6d5344a65abd3feccbb48e7991ab1b09558686
+        image: harbor.vrabbi.cloud/tap/workloads/acme-cart-workloads@sha256:e457f7a9d3cd4bd87cb7aace96e48018d84a277e0c1106a65808962e0a12eba1
         name: workload
         resources: {}
         securityContext:
