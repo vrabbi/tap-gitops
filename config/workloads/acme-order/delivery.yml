@@ -58,7 +58,7 @@ spec:
           value: https://acme-fitness.tap-lab.terasky.demo
         - name: PAYMENT_SERVICE_SERVICE_HOST
           value: acme-payment
-        image: harbor.vrabbi.cloud/tap/workloads/acme-order-workloads@sha256:0b3c5b42d835e791b0c93161cf1841eae2298bfcb6835be8494ed293c299dc63
+        image: harbor.vrabbi.cloud/tap/workloads/acme-order-workloads@sha256:9d77d9f713c7af65bc46a9d0c89153b11844e63e78f5b0a3f2ea9134fe2e008e
         name: workload
         resources: {}
         securityContext:
