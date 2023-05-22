@@ -36,7 +36,7 @@ spec:
           spring-boot-convention/app-live-view-appflavour-check
           spring-boot-convention/app-live-view-connector-boot
           spring-boot-convention/app-live-view-appflavours-boot
-        developer.apps.tanzu.vmware.com/image-source-digest: main/5007720241fd1d209f08e3867673b27365394338
+        developer.apps.tanzu.vmware.com/image-source-digest: main/30e08ba7826bbe65c26ec8a0da770b9665804a42
         developer.conventions/target-containers: workload
         kubectl.kubernetes.io/last-applied-configuration: |
           {"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"annotations":{},"labels":{"app.kubernetes.io/part-of":"demo-01","apps.tanzu.vmware.com/auto-configure-actuators":"true","apps.tanzu.vmware.com/has-tests":"true","apps.tanzu.vmware.com/workload-type":"web"},"name":"demo-01","namespace":"workloads"},"spec":{"build":{"env":[{"name":"BP_JVM_VERSION","value":"11"}]},"env":[{"name":"JAVA_TOOL_OPTIONS","value":"-Dmanagement.server.port=8081 -Dserver.port=8081 -Dmanagement.health.probes.enabled=\"false\""}],"params":[{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}},{"name":"debug","value":"true"},{"name":"live-update","value":"true"},{"name":"testing_pipeline_matching_labels","value":{"apps.tanzu.vmware.com/pipeline":"acme-fitness-generic-test"}}],"source":{"git":{"ref":{"branch":"main"},"url":"https://github.com/vrabbi/java-web-app"}}}}
@@ -62,7 +62,7 @@ spec:
           value: "true"
         - name: BPL_DEBUG_PORT
           value: "9005"
-        image: harbor.vrabbi.cloud/tap/workloads/demo-01-workloads@sha256:040722d78eea53e58124453434c0a17cc6081a3e58a8dbbb05ba483e85c5c079
+        image: harbor.vrabbi.cloud/tap/workloads/demo-01-workloads@sha256:583ebd912050809051e7d2fc076ba6e57a0b05129fc87be4002de526d8feb76d
         name: workload
         ports:
         - containerPort: 8081
