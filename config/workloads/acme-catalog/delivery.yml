@@ -49,7 +49,7 @@ spec:
           spring-boot-convention/service-intent-postgres
         developer.conventions/target-containers: workload
         kubectl.kubernetes.io/last-applied-configuration: |
-          {"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"annotations":{},"labels":{"app.kubernetes.io/part-of":"acme-catalog","apps.tanzu.vmware.com/auto-configure-actuators":"true","apps.tanzu.vmware.com/has-tests":"true","apps.tanzu.vmware.com/workload-type":"server"},"name":"acme-catalog","namespace":"workloads"},"spec":{"build":{"env":[{"name":"BP_JVM_VERSION","value":"17"}]},"env":[{"name":"spring.mvc.static-path-pattern","value":"/static/images/**"},{"name":"spring.web.resources.cache.cachecontrol.max-age","value":"3600"},{"name":"spring.web.resources.cache.cachecontrol.cache-public","value":"true"}],"params":[{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}},{"name":"testing_pipeline_matching_labels","value":{"apps.tanzu.vmware.com/pipeline":"acme-fitness-java-subpath-test"}},{"name":"testing_pipeline_params","value":{"subpath":"apps/acme-catalog"}},{"name":"ports","value":[{"containerPort":8080,"name":"http","port":80}]}],"source":{"git":{"ref":{"branch":"Azure"},"url":"https://github.com/vrabbi/acme-fitness-store"},"subPath":"apps/acme-catalog"}}}
+          {"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"annotations":{},"labels":{"apis.apps.tanzu.vmware.com/register-api":"true","app.kubernetes.io/part-of":"acme-catalog","apps.tanzu.vmware.com/auto-configure-actuators":"true","apps.tanzu.vmware.com/workload-type":"server"},"name":"acme-catalog","namespace":"workloads"},"spec":{"build":{"env":[{"name":"BP_JVM_VERSION","value":"17"}]},"env":[{"name":"spring.mvc.static-path-pattern","value":"/static/images/**"},{"name":"spring.web.resources.cache.cachecontrol.max-age","value":"3600"},{"name":"spring.web.resources.cache.cachecontrol.cache-public","value":"true"}],"params":[{"name":"api_descriptor","value":{"description":"ACME Catalog API","location":{"baseURL":"http://acme-catalog.workloads.svc.cluster.local/","path":"/v3/api-docs"},"owner":"default-team","type":"openapi"}},{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}},{"name":"testing_pipeline_matching_labels","value":{"apps.tanzu.vmware.com/pipeline":"acme-fitness-java-subpath-test"}},{"name":"testing_pipeline_params","value":{"subpath":"apps/acme-catalog"}},{"name":"ports","value":[{"containerPort":8080,"name":"http","port":80}]}],"source":{"git":{"ref":{"branch":"Azure"},"url":"https://github.com/vrabbi/acme-fitness-store"},"subPath":"apps/acme-catalog"}}}
         services.conventions.carto.run/postgres: postgresql/42.5.1
       labels:
         apis.apps.tanzu.vmware.com/register-api: "true"
@@ -76,7 +76,7 @@ spec:
           value: "true"
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: harbor.vrabbi.cloud/tap/workloads/acme-catalog-workloads@sha256:e73e5c73bba291217a3470ec6683e58bf365cbb91e00f1f77d9d2fe78a69ae06
+        image: harbor.vrabbi.cloud/tap/workloads/acme-catalog-workloads@sha256:7a045c4fd3ed5d67a15af4369b2a7f0f967d937c33b31ef6e87173ba2986f87c
         livenessProbe:
           httpGet:
             path: /livez
