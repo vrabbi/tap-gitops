@@ -36,7 +36,7 @@ spec:
           spring-boot-convention/app-live-view-appflavour-check
           spring-boot-convention/app-live-view-connector-boot
           spring-boot-convention/app-live-view-appflavours-boot
-        developer.apps.tanzu.vmware.com/image-source-digest: main/5007720241fd1d209f08e3867673b27365394338
+        developer.apps.tanzu.vmware.com/image-source-digest: main/30e08ba7826bbe65c26ec8a0da770b9665804a42
         developer.conventions/target-containers: workload
         kubectl.kubernetes.io/last-applied-configuration: |
           {"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"annotations":{},"labels":{"app.kubernetes.io/part-of":"tanzu-java-web-app-demo","apps.tanzu.vmware.com/auto-configure-actuators":"true","apps.tanzu.vmware.com/has-tests":"true","apps.tanzu.vmware.com/workload-type":"web"},"name":"tanzu-java-web-app-demo","namespace":"workloads"},"spec":{"build":{"env":[{"name":"BP_JVM_VERSION","value":"11"}]},"params":[{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}},{"name":"debug","value":"true"},{"name":"live-update","value":"true"},{"name":"testing_pipeline_matching_labels","value":{"apps.tanzu.vmware.com/pipeline":"acme-fitness-generic-test"}}],"source":{"git":{"ref":{"branch":"main"},"url":"https://github.com/vrabbi/java-web-app"}}}}
@@ -62,7 +62,7 @@ spec:
           value: "9005"
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: harbor.vrabbi.cloud/tap/workloads/tanzu-java-web-app-demo-workloads@sha256:4fc32da5f0568bd3f452125df339b60b75c98094df34988679ebc7dc70c11395
+        image: harbor.vrabbi.cloud/tap/workloads/tanzu-java-web-app-demo-workloads@sha256:e47fb350d2e6013977b8e3337732b519bbd7703c60546720479a01d83748b908
         name: workload
         ports:
         - containerPort: 8080
