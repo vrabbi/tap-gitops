@@ -16,6 +16,7 @@ metadata:
 spec:
   selector:
     matchLabels:
+      apis.apps.tanzu.vmware.com/register-api: "true"
       app.kubernetes.io/component: run
       app.kubernetes.io/part-of: acme-catalog
       apps.tanzu.vmware.com/auto-configure-actuators: "true"
@@ -51,6 +52,7 @@ spec:
           {"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"annotations":{},"labels":{"app.kubernetes.io/part-of":"acme-catalog","apps.tanzu.vmware.com/auto-configure-actuators":"true","apps.tanzu.vmware.com/has-tests":"true","apps.tanzu.vmware.com/workload-type":"server"},"name":"acme-catalog","namespace":"workloads"},"spec":{"build":{"env":[{"name":"BP_JVM_VERSION","value":"17"}]},"env":[{"name":"spring.mvc.static-path-pattern","value":"/static/images/**"},{"name":"spring.web.resources.cache.cachecontrol.max-age","value":"3600"},{"name":"spring.web.resources.cache.cachecontrol.cache-public","value":"true"}],"params":[{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}},{"name":"testing_pipeline_matching_labels","value":{"apps.tanzu.vmware.com/pipeline":"acme-fitness-java-subpath-test"}},{"name":"testing_pipeline_params","value":{"subpath":"apps/acme-catalog"}},{"name":"ports","value":[{"containerPort":8080,"name":"http","port":80}]}],"source":{"git":{"ref":{"branch":"Azure"},"url":"https://github.com/vrabbi/acme-fitness-store"},"subPath":"apps/acme-catalog"}}}
         services.conventions.carto.run/postgres: postgresql/42.5.1
       labels:
+        apis.apps.tanzu.vmware.com/register-api: "true"
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: acme-catalog
         apps.tanzu.vmware.com/auto-configure-actuators: "true"
@@ -107,6 +109,7 @@ metadata:
     carto.run/workload-name: acme-catalog
 spec:
   selector:
+    apis.apps.tanzu.vmware.com/register-api: "true"
     app.kubernetes.io/component: run
     app.kubernetes.io/part-of: acme-catalog
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
