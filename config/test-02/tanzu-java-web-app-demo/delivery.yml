@@ -4,7 +4,7 @@ metadata:
   name: tanzu-java-web-app-demo
   annotations:
     terasky.tap.tracability/source-image: harbor.vrabbi.cloud/library/sample-test-02:latest@sha256:b25577913dbca25d82d2ba5b15214c53a5a811b64b8916cd6d9ddef3dc86f025
-    terasky.tap.tracability/source-commit: b25577913dbca25d82d2ba5b15214c53a5a811b64b8916cd6d9ddef3dc86f025
+    terasky.tap.tracability/source-image-sha: sha256:b25577913dbca25d82d2ba5b15214c53a5a811b64b8916cd6d9ddef3dc86f025
     ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
     ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
     kapp.k14s.io/change-rule: upsert after upserting servicebinding.io/ServiceBindings
