@@ -4,7 +4,7 @@ metadata:
   name: demo-rmq-producer
   annotations:
     terasky.tap.tracability/git-repo: https://github.com/vrabbi/demo-rmq-producer
-    terasky.tap.tracability/source-git-commit: fd432d09333303dc594903d562811d100ce8657d
+    terasky.tap.tracability/source-git-commit: 7742422189ad21d6de41b0bf8fdabea11a663faa
     terasky.tap.tracability/git-branch: main
     ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
     ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
