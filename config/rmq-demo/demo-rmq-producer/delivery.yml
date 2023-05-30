@@ -4,8 +4,8 @@ metadata:
   name: demo-rmq-producer
   annotations:
     terasky.tap.tracability/git-repo: https://github.com/vrabbi/demo-rmq-producer
+    terasky.tap.tracability/source-git-commit: 23d86cd8dc10af2916273a53c376fe54378947fd
     terasky.tap.tracability/git-branch: main
-    terasky.tap.tracability/source-commit: 23d86cd8dc10af2916273a53c376fe54378947fd
     ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
     ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
     kapp.k14s.io/change-rule: upsert after upserting servicebinding.io/ServiceBindings
