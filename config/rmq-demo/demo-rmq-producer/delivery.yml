@@ -51,7 +51,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: harbor.vrabbi.cloud/tap/workloads/demo-rmq-producer-rmq-demo@sha256:6be723aeed17a2a2009dd8fe1e0d334c8f7324961e64038ccf6da5e89d923cc3
+        image: harbor.vrabbi.cloud/tap/workloads/demo-rmq-producer-rmq-demo@sha256:02ee8e48ede1884940e86b647af7512836832e8b3fc72a83374072224d3b47fd
         name: workload
         ports:
         - containerPort: 8080
