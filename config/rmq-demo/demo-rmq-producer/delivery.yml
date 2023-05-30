@@ -4,7 +4,7 @@ metadata:
   name: demo-rmq-producer
   annotations:
     terasky.tap.tracability/git-repo: https://github.com/vrabbi/demo-rmq-producer
-    terasky.tap.tracability/source-git-commit: 5a626713eaf83bcde6181fed57ba23d2c541f781
+    terasky.tap.tracability/source-git-commit: fd432d09333303dc594903d562811d100ce8657d
     terasky.tap.tracability/git-branch: main
     ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
     ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
@@ -51,7 +51,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: harbor.vrabbi.cloud/tap/workloads/demo-rmq-producer-rmq-demo@sha256:02ee8e48ede1884940e86b647af7512836832e8b3fc72a83374072224d3b47fd
+        image: harbor.vrabbi.cloud/tap/workloads/demo-rmq-producer-rmq-demo@sha256:37fba42286a2fce7155320fd96296dd1f829d16216298e5732654830c89ab902
         name: workload
         ports:
         - containerPort: 8080
