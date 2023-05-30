@@ -4,6 +4,7 @@ metadata:
   name: demo-rmq-consumer
   annotations:
     terasky.tap.tracability/git-repo: https://github.com/vrabbi/demo-rmq-consumer
+    terasky.tap.tracability/git-branch: rabbit
     terasky.tap.tracability/source-commit: 2f484d85e811b9ef8b0ff5fc533531ffda0ce4a5
     ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
     ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
