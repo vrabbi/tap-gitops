@@ -3,6 +3,8 @@ kind: Service
 metadata:
   name: server-side-ui-starter
   annotations:
+    terasky.tap.tracability/source-image: harbor.vrabbi.cloud/library/sample-app:latest@sha256:34a9674f33393ca3a17a6902f46085ee26f9d116e4c4ccc734215601d1a1bf8a
+    terasky.tap.tracability/source-image-sha: sha256:34a9674f33393ca3a17a6902f46085ee26f9d116e4c4ccc734215601d1a1bf8a
     ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
     ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
     kapp.k14s.io/change-rule: upsert after upserting servicebinding.io/ServiceBindings
@@ -36,7 +38,7 @@ spec:
           spring-boot-convention/app-live-view-appflavour-check
           spring-boot-convention/app-live-view-connector-boot
           spring-boot-convention/app-live-view-appflavours-boot
-        developer.apps.tanzu.vmware.com/image-source-digest: harbor.vrabbi.cloud/library/sample-app:latest@sha256:e0fc8a9dbdcfb2921494f15a8d2817558e55c3066940d5ee61a6f1b351e73b69
+        developer.apps.tanzu.vmware.com/image-source-digest: harbor.vrabbi.cloud/library/sample-app:latest@sha256:34a9674f33393ca3a17a6902f46085ee26f9d116e4c4ccc734215601d1a1bf8a
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -59,7 +61,7 @@ spec:
           value: "9005"
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: harbor.vrabbi.cloud/tap/workloads/server-side-ui-starter-workloads@sha256:bf4bf0061bb1c7e08b61db4c0620f9b0c96acf01f79e0a1bf2146757579ff17d
+        image: harbor.vrabbi.cloud/tap/workloads/server-side-ui-starter-workloads@sha256:2d2866f4868c1a966e8e224742181c9c0984c7a33b4402e4a108b2375220042e
         livenessProbe:
           httpGet:
             path: /livez
