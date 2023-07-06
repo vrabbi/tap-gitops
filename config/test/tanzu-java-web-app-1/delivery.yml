@@ -37,7 +37,7 @@ spec:
           spring-boot-convention/app-live-view-appflavour-check
           spring-boot-convention/app-live-view-connector-boot
           spring-boot-convention/app-live-view-appflavours-boot
-        developer.apps.tanzu.vmware.com/image-source-digest: harbor.vrabbi.cloud/tap-lsp/source-code:test-tanzu-java-web-app-1@sha256:60912ffd2152a7a6601dc5ba15eb235e8ec34d86449f1e038ab4f9590412d9d4
+        developer.apps.tanzu.vmware.com/image-source-digest: harbor.vrabbi.cloud/tap-lsp/source-code:test-tanzu-java-web-app-1@sha256:e18584c044b54802382932d72469cc412b7660e746aabd0ab952270c0d93bdde
         developer.conventions/target-containers: workload
         local-source-proxy.apps.tanzu.vmware.com: harbor.vrabbi.cloud/tap-lsp/source-code:test-tanzu-java-web-app-1@sha256:e18584c044b54802382932d72469cc412b7660e746aabd0ab952270c0d93bdde
       labels:
@@ -62,7 +62,7 @@ spec:
           value: "9005"
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: harbor.vrabbi.cloud/tap/workloads/tanzu-java-web-app-1-test@sha256:2c9e15aab725087e9e961e1a2aa5c18b96efac6b9562cdc6a497961631a5f76c
+        image: harbor.vrabbi.cloud/tap/workloads/tanzu-java-web-app-1-test@sha256:ac2e209fd6ab8d928b8630156005470d37dcb7ef86251d1659aa5c061e8e63ff
         livenessProbe:
           httpGet:
             path: /livez
