@@ -39,7 +39,7 @@ spec:
           spring-boot-convention/app-live-view-appflavours-boot
         developer.apps.tanzu.vmware.com/image-source-digest: harbor.vrabbi.cloud/tap-lsp/source-code:test-tanzu-java-web-app-1@sha256:60912ffd2152a7a6601dc5ba15eb235e8ec34d86449f1e038ab4f9590412d9d4
         developer.conventions/target-containers: workload
-        local-source-proxy.apps.tanzu.vmware.com: harbor.vrabbi.cloud/tap-lsp/source-code:test-tanzu-java-web-app-1@sha256:60912ffd2152a7a6601dc5ba15eb235e8ec34d86449f1e038ab4f9590412d9d4
+        local-source-proxy.apps.tanzu.vmware.com: harbor.vrabbi.cloud/tap-lsp/source-code:test-tanzu-java-web-app-1@sha256:e18584c044b54802382932d72469cc412b7660e746aabd0ab952270c0d93bdde
       labels:
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: tanzu-java-web-app-1
