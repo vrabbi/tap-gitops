@@ -61,7 +61,7 @@ spec:
         - name: BPL_DEBUG_PORT
           value: "9005"
         - name: JAVA_TOOL_OPTIONS
-          value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
+          value: -Dsssmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
         image: harbor.vrabbi.cloud/tap/workloads/demo-app-2-test@sha256:93d2b8a7ae89aa50d15d1513cebdb5d044c249c7fd3b251d541f14b4e0b895f8
         livenessProbe:
           httpGet:
@@ -80,5 +80,5 @@ spec:
         resources: {}
         securityContext:
           runAsUser: 1000
-      serviceAccountName: defaultkjhbh
+      serviceAccountName: default
 
