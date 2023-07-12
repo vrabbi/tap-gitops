@@ -32,7 +32,7 @@ spec:
           spring-boot-convention/app-live-view-appflavour-check
         developer.apps.tanzu.vmware.com/image-source-digest: harbor.vrabbi.cloud/tap-lsp/source-code:test-zzz-kotlin@sha256:4fcc9d2ae877c6b07e140f67c2d6d69f26833468e762bd4911c8f14807a58658
         developer.conventions/target-containers: workload
-        local-source-proxy.apps.tanzu.vmware.com: harbor.vrabbi.cloud/tap-lsp/source-code:test-zzz-kotlin@sha256:4fcc9d2ae877c6b07e140f67c2d6d69f26833468e762bd4911c8f14807a58658
+        local-source-proxy.apps.tanzu.vmware.com: harbor.vrabbi.cloud/tap-lsp/source-code:test-zzz-kotlin@sha256:69bd135eed762e129ed7e7172413793b097cf20dc64a20269fbb9ac2efef3d88
       labels:
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: zzz-kotlin
