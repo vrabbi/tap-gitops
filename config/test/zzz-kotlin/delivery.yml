@@ -30,7 +30,7 @@ spec:
           spring-boot-convention/spring-boot
           spring-boot-convention/spring-boot-web
           spring-boot-convention/app-live-view-appflavour-check
-        developer.apps.tanzu.vmware.com/image-source-digest: harbor.vrabbi.cloud/tap-lsp/source-code:test-zzz-kotlin@sha256:ce8fd4c2d956d9ba93143791f983db3fc08ee42fcb537af7f6103de3551d98f6
+        developer.apps.tanzu.vmware.com/image-source-digest: harbor.vrabbi.cloud/tap-lsp/source-code:test-zzz-kotlin@sha256:4fcc9d2ae877c6b07e140f67c2d6d69f26833468e762bd4911c8f14807a58658
         developer.conventions/target-containers: workload
         local-source-proxy.apps.tanzu.vmware.com: harbor.vrabbi.cloud/tap-lsp/source-code:test-zzz-kotlin@sha256:4fcc9d2ae877c6b07e140f67c2d6d69f26833468e762bd4911c8f14807a58658
       labels:
@@ -49,7 +49,7 @@ spec:
           value: "9005"
         - name: JAVA_TOOL_OPTIONS
           value: -Dserver.port="8080"
-        image: harbor.vrabbi.cloud/tap/workloads/zzz-kotlin-test@sha256:519ff47a5ecb1c78acb5beefb0c51223cc69324d773d4f3272e6e303b8940868
+        image: harbor.vrabbi.cloud/tap/workloads/zzz-kotlin-test@sha256:00e88a554c22fde41703656b65ded9de3cf6ff6ea907d620ab3296a8ea3a0524
         name: workload
         ports:
         - containerPort: 8080
