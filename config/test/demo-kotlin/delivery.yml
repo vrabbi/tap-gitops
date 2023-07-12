@@ -17,9 +17,12 @@ spec:
     metadata:
       annotations:
         apps.tanzu.vmware.com/live-update: "true"
+        autoscaling.knative.dev/maxScale: "1"
+        autoscaling.knative.dev/minScale: "1"
         boot.spring.io/version: 3.1.1
         conventions.carto.run/applied-conventions: |-
           appliveview-sample/app-live-view-appflavour-check
+          developer-conventions/live-update-convention
           developer-conventions/add-source-image-label
           spring-boot-convention/auto-configure-actuators-check
           spring-boot-convention/spring-boot
@@ -51,7 +54,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.health.probes.enabled="true" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: harbor.vrabbi.cloud/tap/workloads/demo-kotlin-test@sha256:48b5ee1b71f46869c2254ad3c3f9f7b563dcbfc70e3d4dd26c30a2ced11fa791
+        image: harbor.vrabbi.cloud/tap/workloads/demo-kotlin-test@sha256:0e4546312dc3bb56a74b0ff35ebb111df34d7dbb7a4102b246fe9f6987d4e3ab
         livenessProbe:
           httpGet:
             path: /livez
