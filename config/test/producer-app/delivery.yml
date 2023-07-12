@@ -1,0 +1,62 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: producer-app
+  annotations:
+    ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
+    ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
+    kapp.k14s.io/change-rule: upsert after upserting servicebinding.io/ServiceBindings
+  labels:
+    app.kubernetes.io/part-of: producer-app
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/component: run
+    carto.run/workload-name: producer-app
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: "1"
+        boot.spring.io/version: 2.5.6
+        conventions.carto.run/applied-conventions: |-
+          appliveview-sample/app-live-view-appflavour-check
+          spring-boot-convention/auto-configure-actuators-check
+          spring-boot-convention/spring-boot
+          spring-boot-convention/spring-boot-graceful-shutdown
+          spring-boot-convention/spring-boot-web
+          spring-boot-convention/spring-boot-actuator
+          spring-boot-convention/app-live-view-appflavour-check
+          spring-boot-convention/app-live-view-connector-boot
+          spring-boot-convention/app-live-view-appflavours-boot
+          spring-boot-convention/service-intent-rabbitmq
+        developer.conventions/target-containers: workload
+        services.conventions.carto.run/rabbitmq: amqp-client/5.12.0
+      labels:
+        app.kubernetes.io/component: run
+        app.kubernetes.io/part-of: producer-app
+        apps.tanzu.vmware.com/auto-configure-actuators: "false"
+        apps.tanzu.vmware.com/has-tests: "true"
+        apps.tanzu.vmware.com/workload-type: web
+        carto.run/workload-name: producer-app
+        conventions.carto.run/framework: spring-boot
+        services.conventions.carto.run/rabbitmq: workload
+        tanzu.app.live.view: "true"
+        tanzu.app.live.view.application.actuator.path: actuator
+        tanzu.app.live.view.application.actuator.port: "8080"
+        tanzu.app.live.view.application.flavours: spring-boot
+        tanzu.app.live.view.application.name: producer-app
+    spec:
+      containers:
+      - env:
+        - name: JAVA_TOOL_OPTIONS
+          value: -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
+        image: harbor.vrabbi.cloud/tap/workloads/producer-app-test@sha256:10b333cd4fe9b17e3f280a1657bffad69e2e80de688d2d86d5e169b20ee6a3e7
+        name: workload
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources: {}
+        securityContext:
+          runAsUser: 1000
+      serviceAccountName: default
+
