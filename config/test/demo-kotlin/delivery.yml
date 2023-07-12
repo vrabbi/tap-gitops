@@ -16,9 +16,11 @@ spec:
   template:
     metadata:
       annotations:
+        apps.tanzu.vmware.com/live-update: "true"
         boot.spring.io/version: 3.1.1
         conventions.carto.run/applied-conventions: |-
           appliveview-sample/app-live-view-appflavour-check
+          developer-conventions/add-source-image-label
           spring-boot-convention/auto-configure-actuators-check
           spring-boot-convention/spring-boot
           spring-boot-convention/spring-boot-graceful-shutdown
@@ -28,6 +30,7 @@ spec:
           spring-boot-convention/app-live-view-appflavour-check
           spring-boot-convention/app-live-view-connector-boot
           spring-boot-convention/app-live-view-appflavours-boot
+        developer.apps.tanzu.vmware.com/image-source-digest: harbor.vrabbi.cloud/tap-lsp/source-code:test-demo-kotlin@sha256:c04d5574fce2ee92e9c84463dc3cb408ce6d6aa28eff30e2ec03be4cd806c322
         developer.conventions/target-containers: workload
         local-source-proxy.apps.tanzu.vmware.com: harbor.vrabbi.cloud/tap-lsp/source-code:test-demo-kotlin@sha256:c04d5574fce2ee92e9c84463dc3cb408ce6d6aa28eff30e2ec03be4cd806c322
       labels:
