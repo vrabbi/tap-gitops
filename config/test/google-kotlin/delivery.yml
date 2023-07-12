@@ -32,6 +32,7 @@ spec:
           spring-boot-convention/app-live-view-appflavour-check
         developer.apps.tanzu.vmware.com/image-source-digest: main@sha1:2dfb6bcb206b0d02d33c5b695f9dbd3b299df3c8
         developer.conventions/target-containers: workload
+        local-source-proxy.apps.tanzu.vmware.com: harbor.vrabbi.cloud/tap-lsp/source-code:test-google-kotlin@sha256:0d8ec1b85e128dd4211839341a17a43f0706730e6a4d02426dee5d56a79cc322
       labels:
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: google-kotlin
