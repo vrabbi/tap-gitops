@@ -24,12 +24,13 @@ spec:
         conventions.carto.run/applied-conventions: |-
           appliveview-sample/app-live-view-appflavour-check
           developer-conventions/debug-convention
+          developer-conventions/live-update-convention
           developer-conventions/add-source-image-label
           spring-boot-convention/auto-configure-actuators-check
           spring-boot-convention/spring-boot
           spring-boot-convention/spring-boot-web
           spring-boot-convention/app-live-view-appflavour-check
-        developer.apps.tanzu.vmware.com/image-source-digest: main@sha1:8062c5f1142ddf1fe189d0c2657ac5731e17871f
+        developer.apps.tanzu.vmware.com/image-source-digest: main@sha1:2dfb6bcb206b0d02d33c5b695f9dbd3b299df3c8
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -47,7 +48,7 @@ spec:
           value: "9005"
         - name: JAVA_TOOL_OPTIONS
           value: -Dserver.port="8080"
-        image: harbor.vrabbi.cloud/tap/workloads/google-kotlin-test@sha256:81e3653d1be080d02ff3dc1c51cfcb99c08f1ee25b31da2ad3b2d808395c75ce
+        image: harbor.vrabbi.cloud/tap/workloads/google-kotlin-test@sha256:f2c6d4c72fcb535b7ac05cb3b9de03c0b8944fe4a0cd875325f4b7d531805807
         name: workload
         ports:
         - containerPort: 8080
