@@ -1,0 +1,61 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: zzzz-kotlin
+  annotations:
+    ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
+    ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
+    kapp.k14s.io/change-rule: upsert after upserting servicebinding.io/ServiceBindings
+  labels:
+    app.kubernetes.io/part-of: zzzz-kotlin
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/component: run
+    carto.run/workload-name: zzzz-kotlin
+spec:
+  template:
+    metadata:
+      annotations:
+        apps.tanzu.vmware.com/debug: "true"
+        apps.tanzu.vmware.com/live-update: "true"
+        autoscaling.knative.dev/maxScale: "1"
+        autoscaling.knative.dev/minScale: "1"
+        boot.spring.io/version: 3.1.1
+        conventions.carto.run/applied-conventions: |-
+          appliveview-sample/app-live-view-appflavour-check
+          developer-conventions/debug-convention
+          developer-conventions/live-update-convention
+          developer-conventions/add-source-image-label
+          spring-boot-convention/auto-configure-actuators-check
+          spring-boot-convention/spring-boot
+          spring-boot-convention/spring-boot-web
+          spring-boot-convention/app-live-view-appflavour-check
+        developer.apps.tanzu.vmware.com/image-source-digest: harbor.vrabbi.cloud/tap-lsp/source-code:test-zzzz-kotlin@sha256:5a39ba4baa87269e0d494f7b178539fb93b48d8f99af04c2abaf2879e7380024
+        developer.conventions/target-containers: workload
+        local-source-proxy.apps.tanzu.vmware.com: harbor.vrabbi.cloud/tap-lsp/source-code:test-zzzz-kotlin@sha256:5a39ba4baa87269e0d494f7b178539fb93b48d8f99af04c2abaf2879e7380024
+      labels:
+        app.kubernetes.io/component: run
+        app.kubernetes.io/part-of: zzzz-kotlin
+        apps.tanzu.vmware.com/has-tests: "true"
+        apps.tanzu.vmware.com/workload-type: web
+        carto.run/workload-name: zzzz-kotlin
+        conventions.carto.run/framework: spring-boot
+    spec:
+      containers:
+      - env:
+        - name: BPL_DEBUG_ENABLED
+          value: "true"
+        - name: BPL_DEBUG_PORT
+          value: "9005"
+        - name: JAVA_TOOL_OPTIONS
+          value: -Dserver.port="8080"
+        image: harbor.vrabbi.cloud/tap/workloads/zzzz-kotlin-test@sha256:b35c55bd887490930553224bb543edeeace90b20605cb83e2d36ea4640dce36a
+        name: workload
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources: {}
+        securityContext:
+          runAsUser: 1000
+      serviceAccountName: default
+
