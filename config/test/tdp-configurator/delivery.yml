@@ -1,0 +1,40 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: tdp-configurator
+  annotations:
+    ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
+    ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
+    kapp.k14s.io/change-rule: upsert after upserting servicebinding.io/ServiceBindings
+  labels:
+    app.kubernetes.io/part-of: tdp-configurator
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/component: run
+    carto.run/workload-name: tdp-configurator
+spec:
+  template:
+    metadata:
+      annotations:
+        conventions.carto.run/applied-conventions: |-
+          appliveview-sample/app-live-view-appflavour-check
+          spring-boot-convention/auto-configure-actuators-check
+          spring-boot-convention/app-live-view-appflavour-check
+        developer.conventions/target-containers: workload
+        kubectl.kubernetes.io/last-applied-configuration: |
+          {"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"annotations":{},"labels":{"app.kubernetes.io/part-of":"tdp-configurator","apps.tanzu.vmware.com/has-tests":"true","apps.tanzu.vmware.com/workload-type":"web"},"name":"tdp-configurator","namespace":"test"},"spec":{"build":{"env":[{"name":"BP_NODE_RUN_SCRIPTS","value":"set-tpb-config,portal:pack"},{"name":"TPB_CONFIG","value":"/tmp/tpb-config.yaml"},{"name":"TPB_CONFIG_STRING","value":"YXBwOgogIHBsdWdpbnM6CiAgICAtIG5hbWU6ICdAdHBiL3BsdWdpbi1oZWxsby13b3JsZCcKICAgICAgdmVyc2lvbjogJ14xLjYuMC1yZWxlYXNlLTEuNi54LjEnCmJhY2tlbmQ6CiAgcGx1Z2luczoKICAgIC0gbmFtZTogJ0B0cGIvcGx1Z2luLWhlbGxvLXdvcmxkLWJhY2tlbmQnCiAgICAgIHZlcnNpb246ICdeMS42LjAtcmVsZWFzZS0xLjYueC4xJwogICAgLSBuYW1lOiAnQHRwYi9wbHVnaW4tbGRhcC1iYWNrZW5kJwogICAgICB2ZXJzaW9uOiAnXjEuNi4wLXJlbGVhc2UtMS42LnguMScK"}]},"params":[{"name":"testing_pipeline_matching_labels","value":{"apps.tanzu.vmware.com/pipeline":"noop-pipeline"}},{"name":"testing_pipeline_params","value":{}}],"source":{"image":"harbor.vrabbi.cloud/tap/tap-packages@sha256:0b03767e0526803c055d080a7d378df9adaeaa7cff0ff5af23a2debe668f20e3","subPath":"builder"}}}
+      labels:
+        app.kubernetes.io/component: run
+        app.kubernetes.io/part-of: tdp-configurator
+        apps.tanzu.vmware.com/has-tests: "true"
+        apps.tanzu.vmware.com/workload-type: web
+        carto.run/workload-name: tdp-configurator
+    spec:
+      containers:
+      - image: harbor.vrabbi.cloud/tap/workloads/tdp-configurator-test@sha256:c403ade14b2a32159d5170a7885463601ea4d7ffa30b4f5fbf14d79519cc4ebb
+        name: workload
+        resources: {}
+        securityContext:
+          runAsUser: 1000
+      serviceAccountName: default
+
