@@ -31,7 +31,7 @@ spec:
         carto.run/workload-name: tdp-configurator
     spec:
       containers:
-      - image: harbor.vrabbi.cloud/tap/workloads/tdp-configurator-test@sha256:c403ade14b2a32159d5170a7885463601ea4d7ffa30b4f5fbf14d79519cc4ebb
+      - image: harbor.vrabbi.cloud/tap/workloads/tdp-configurator-test@sha256:7fcf0c146fabfbc7dfa31d7bd56348ec34602f326f1281d6e606af42939830e4
         name: workload
         resources: {}
         securityContext:
