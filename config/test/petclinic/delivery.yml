@@ -55,7 +55,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: harbor.vrabbi.cloud/tap/workloads/petclinic-test@sha256:544a8d0afc6d1fbe1d6a9da3b9666efea384e0253f6b102142c76a12a781f10a
+        image: harbor.vrabbi.cloud/tap/workloads/petclinic-test@sha256:e1b502feb200690d37f246afa9e5c2ba40fd2d8ef748c5ed8b277c569a97e4d8
         livenessProbe:
           httpGet:
             path: /livez
