@@ -14,9 +14,9 @@ metadata:
     carto.run/workload-name: petclinic
 spec:
   type: openapi
-  description: Manage Employees
-  system: demo-app
-  owner: default-team
+  description: Manage The Pet Clinic
+  system: petclinic
+  owner: pets-team
   location:
     path: /v3/api-docs
     baseURL:
