@@ -35,7 +35,7 @@ spec:
         carto.run/workload-name: pacman
     spec:
       containers:
-      - image: harbor.vrabbi.cloud/tap/workloads/pacman-tdp@sha256:cc19579ad639fe32738202f6379a7c153acfb27ba0c82b16350f62242e66038c
+      - image: harbor.vrabbi.cloud/tap/workloads/pacman-tdp@sha256:798c78cb22c727ded94d7d5178f434a18cd0fd62440db08e30c28d8e9a1d834f
         name: workload
         resources: {}
         securityContext:
