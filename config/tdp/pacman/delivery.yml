@@ -29,12 +29,13 @@ spec:
       labels:
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: pacman
+        apps.tanzu.vmware.com/has-tests: "true"
         apps.tanzu.vmware.com/workload-type: web
         backstage.io/kubernetes-id: pacman
         carto.run/workload-name: pacman
     spec:
       containers:
-      - image: harbor.vrabbi.cloud/tap/workloads/pacman-tdp@sha256:e1a58bef3b24f4c941fa492da20216f5efc925ad4dcf1ca34eb1d56183ddb8cc
+      - image: harbor.vrabbi.cloud/tap/workloads/pacman-tdp@sha256:5f2aa02f35d03c31e9db0af7b82f38f1253c66cdf352339755154dc01e9d5873
         name: workload
         resources: {}
         securityContext:
