@@ -39,6 +39,7 @@ spec:
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: demo-app
         apps.tanzu.vmware.com/auto-configure-actuators: "true"
+        apps.tanzu.vmware.com/has-tests: "true"
         apps.tanzu.vmware.com/workload-type: web
         backstage.io/kubernetes-id: demo-app
         carto.run/workload-name: demo-app
@@ -53,7 +54,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: harbor.vrabbi.cloud/tap/workloads/demo-app-tdp@sha256:db3bef7e78a0080bd4da62b348f424098573a0062be11c168bf080f988fad322
+        image: harbor.vrabbi.cloud/tap/workloads/demo-app-tdp@sha256:e0b38b687791b296e3de3dbff304fcdd651df86acb204a223759d41c2a0df072
         name: workload
         ports:
         - containerPort: 8080
