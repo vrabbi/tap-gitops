@@ -37,6 +37,7 @@ spec:
         kubectl.kubernetes.io/last-applied-configuration: |
           {"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"annotations":{},"labels":{"app.kubernetes.io/part-of":"demo-app","apps.tanzu.vmware.com/auto-configure-actuators":"true","apps.tanzu.vmware.com/workload-type":"web","backstage.io/kubernetes-id":"demo-app"},"name":"demo-app","namespace":"tdp"},"spec":{"build":{"env":[{"name":"BP_JVM_VERSION","value":"17"}]},"params":[{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}}],"source":{"git":{"ref":{"branch":"main"},"url":"https://github.com/vrabbi/java-web-app"}}}}
       labels:
+        app: demo-app
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: demo-app
         apps.tanzu.vmware.com/auto-configure-actuators: "true"
