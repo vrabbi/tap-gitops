@@ -8,6 +8,7 @@ metadata:
     kapp.k14s.io/change-rule: upsert after upserting servicebinding.io/ServiceBindings
   labels:
     apis.apps.tanzu.vmware.com/register-api: "true"
+    app: petclinic
     app.kubernetes.io/part-of: petclinic
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
     apps.tanzu.vmware.com/has-tests: "true"
