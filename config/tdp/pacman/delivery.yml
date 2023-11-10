@@ -28,6 +28,7 @@ spec:
         kubectl.kubernetes.io/last-applied-configuration: |
           {"apiVersion":"carto.run/v1alpha1","kind":"Workload","metadata":{"annotations":{},"labels":{"app.kubernetes.io/part-of":"pacman","apps.tanzu.vmware.com/workload-type":"web","backstage.io/kubernetes-id":"pacman"},"name":"pacman","namespace":"tdp"},"spec":{"params":[{"name":"dockerfile","value":"./Dockerfile"},{"name":"annotations","value":{"autoscaling.knative.dev/minScale":"1"}}],"source":{"git":{"ref":{"branch":"master"},"url":"https://github.com/vrabbi/js-pacman"}}}}
       labels:
+        app: pacman
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: pacman
         apps.tanzu.vmware.com/has-tests: "true"
