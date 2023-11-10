@@ -42,6 +42,7 @@ spec:
         services.conventions.carto.run/postgres: postgresql/42.5.1
       labels:
         apis.apps.tanzu.vmware.com/register-api: "true"
+        app: petclinic
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: petclinic
         apps.tanzu.vmware.com/auto-configure-actuators: "true"
