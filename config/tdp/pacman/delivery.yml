@@ -42,7 +42,7 @@ spec:
           value: pacman
         - name: NEW_RELIC_LICENSE_KEY
           value: bfe45d00592f5584fbe7f4adbea1bb1aFFFFNRAL
-        image: harbor.vrabbi.cloud/tap/workloads/pacman-tdp@sha256:93e1f52dc02c433c0d6ac1ec747aa010d0e37d472d43bf413209770241e9c492
+        image: harbor.vrabbi.cloud/tap/workloads/pacman-tdp@sha256:c9916885739c3aba8c646c714a8bf33c628f9d29f70d49fef806729960a2a194
         name: workload
         resources: {}
         securityContext:
