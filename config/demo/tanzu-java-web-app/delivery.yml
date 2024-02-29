@@ -49,6 +49,7 @@ spec:
         tanzu.app.live.view.application.actuator.port: "8081"
         tanzu.app.live.view.application.flavours: spring-boot
         tanzu.app.live.view.application.name: tanzu-java-web-app
+        tap.terasky.com/language: java
     spec:
       containers:
       - env:
